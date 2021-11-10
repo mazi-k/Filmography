@@ -6,4 +6,6 @@
     <string name="profile">Профиль</string>
     <string name="watching">Просматриваемые</string>
     <string name="new_films">Новое</string>
+    <string name="recommendations">Рекомендации</string>
+    <string name="description">Описание</string>
 </resources>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     android:backgroundTint="@color/orange_100"
     android:orientation="vertical"
-    app:cardCornerRadius="20dp">
+    app:cardCornerRadius="10dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="10dp">
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             tools:text="Title"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <ImageView
             android:id="@+id/cover_image_view"
@@ -40,9 +40,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:paddingStart="60dp"
                 tools:text="7.7"
-                android:textSize="25sp"
+                android:paddingEnd="10dp"
+                android:textSize="20sp"
                 tools:ignore="RtlSymmetry"
                 app:drawableTint="@color/orange_600"
                 app:drawableStartCompat="@drawable/ic_star_rate" />
@@ -54,7 +54,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 tools:text="2020"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
 
         </LinearLayout>

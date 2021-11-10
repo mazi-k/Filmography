@@ -1,35 +1,34 @@
 package com.example.filmography.ui.adapters
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.filmography.R
 import com.example.filmography.models.FilmModel
+import com.example.filmography.models.OnItemClickListener
 import com.example.filmography.ui.holders.FilmViewHolder
-import java.util.ArrayList
 
-class FilmAdapter(private val titles: ArrayList<String>): RecyclerView.Adapter<FilmViewHolder>() {
+class FilmAdapter(listener: OnItemClickListener): RecyclerView.Adapter<FilmViewHolder>() {
+
+    private lateinit var data: List<FilmModel>
+    private val clickListener: OnItemClickListener = listener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_film, parent, false)
-        return FilmViewHolder(itemView)
+        return FilmViewHolder(parent, clickListener)
     }
 
-    private fun fillingRate (): ArrayList<String>{
-        val list: ArrayList<String> = ArrayList<String>()
-        list.add("8.0")
-        list.add("6.2")
-        list.add("9.6")
-        list.add("8.1")
-        return list
+    fun setData(data: List<FilmModel>){
+        this.data = data
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
-        holder.titleTextView?.text = titles.get(position)
-        holder.rateTextView?.text = fillingRate().get(position)
-        holder.dateTextView?.text = "2000"
+        holder.titleTextView?.text = data.get(position).title
+        holder.rateTextView?.text = data.get(position).rate.toString()
+        holder.dateTextView?.text = data.get(position).date
+
+        holder.itemView.setOnClickListener { clickListener.onItemClick(data.get(position)) }
     }
 
-    override fun getItemCount()= titles.size
+    override fun getItemCount()= data.size
+
 }
+
