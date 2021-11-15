@@ -1,15 +1,14 @@
 package com.example.filmography.viewModels
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.filmography.models.FilmModel
 import com.example.filmography.models.FilmsData
 
-class FilmsViewModel: ViewModel(), FilmContract.ViewModel {
+class FilmsListViewModel: ViewModel(), FilmContract.ListViewModel {
 
-    override var filmsList: MutableLiveData<List<FilmModel>> = MutableLiveData()
-    override var film: MutableLiveData<FilmModel> = MutableLiveData()
+    override var filmsList = MutableLiveData<List<FilmModel>>()
+    override var film = MutableLiveData<FilmModel>()
 
     init {
         filmsList.value = FilmsData.getFilms()
@@ -19,20 +18,7 @@ class FilmsViewModel: ViewModel(), FilmContract.ViewModel {
         return filmsList
     }
 
-    override fun getFilm(): FilmModel {
-        return film.value!!
-    }
-
-    override fun onItemClick(choosedFilm: FilmModel) {
-        film.postValue(choosedFilm)
-    }
-
     override fun makeFavorite(film: FilmModel) {
         TODO("Not yet implemented")
     }
-
-
-
-
-
 }

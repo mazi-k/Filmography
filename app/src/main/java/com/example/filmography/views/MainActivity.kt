@@ -1,14 +1,13 @@
 package com.example.filmography.views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.filmography.R
 import com.example.filmography.databinding.ActivityMainBinding
-import com.example.filmography.viewModels.FilmsViewModel
+import com.example.filmography.viewModels.MainViewModel
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private var isLandscape = false
     private var isFirstLaunch = true
 
-    private val viewModel by lazy { ViewModelProviders.of(this).get(FilmsViewModel::class.java)}
+    private val viewModel by lazy { ViewModelProviders.of(this).get(MainViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,22 +26,28 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if(isFirstLaunch){
+        if (isFirstLaunch) {
             createHomeFragment()
         }
 
         initBottomNavigationMenu()
+        initViewModel(viewModel)
+    }
 
+    private fun initViewModel(viewModel: MainViewModel) {
         viewModel.film.observe(this) {
-            Toast.makeText(this, "${viewModel.film.value}", Toast.LENGTH_SHORT).show()
-            startFragment(R.id.fragment_container, FilmFragment())
+            if (isLandscape) {
+                startFragment(R.id.fragment_container_list, FilmFragment())
+            } else {
+                startFragment(R.id.fragment_container, FilmFragment())
+            }
         }
     }
 
     private fun createHomeFragment() {
         isLandscape = resources.getBoolean(R.bool.isLandscape)
 
-        if (isLandscape){
+        if (isLandscape) {
             startFragment(R.id.fragment_container_list, HomeFragment())
         } else {
             startFragment(R.id.fragment_container, HomeFragment())
@@ -52,15 +57,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun initBottomNavigationMenu() {
         if (isLandscape) {
-            binding.bottomNavigationMenu?.setOnItemSelectedListener { item: MenuItem -> run {
-                fragmentMap[item.itemId]?.let { startFragment(R.id.fragment_container_content, it) }
-            }
+            binding.bottomNavigationMenu?.setOnItemSelectedListener { item: MenuItem ->
+                run {
+                    fragmentMap[item.itemId]?.let {
+                        startFragment(R.id.fragment_container_content, it)
+                    }
+                }
                 true
             }
         } else {
-            binding.bottomNavigationMenu?.setOnItemSelectedListener { item: MenuItem -> run {
-                fragmentMap[item.itemId]?.let { startFragment(R.id.fragment_container, it) }
-            }
+            binding.bottomNavigationMenu?.setOnItemSelectedListener { item: MenuItem ->
+                run {
+                    fragmentMap[item.itemId]?.let { startFragment(R.id.fragment_container, it) }
+                }
                 true
             }
         }
