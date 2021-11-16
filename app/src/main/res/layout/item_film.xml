@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="8dp"
     android:backgroundTint="@color/orange_100"
     android:orientation="vertical"
+    android:gravity="center"
     app:cardCornerRadius="10dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:layout_margin="10dp">
 
         <TextView
             android:id="@+id/title_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             tools:text="Title"
-            android:textSize="25sp" />
+            android:maxLines="3"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
 
         <ImageView
             android:id="@+id/cover_image_view"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:src="@mipmap/icon_flower" />
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,6 +46,7 @@
                 android:paddingEnd="10dp"
                 android:textSize="20sp"
                 tools:ignore="RtlSymmetry"
+                android:textColor="@color/black"
                 app:drawableTint="@color/orange_600"
                 app:drawableStartCompat="@drawable/ic_star_rate" />
 
@@ -54,7 +57,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 tools:text="2020"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
 
 
         </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,8 +14,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
-        android:textSize="20sp"
+        android:textSize="25sp"
         tools:text="Title"
+        android:textColor="@color/black"
         android:background="@color/orange_100"/>
 
     <ScrollView
@@ -47,14 +49,22 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    tools:text="2000" />
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    tools:text="2000"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/rate_text_view"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    tools:text="10.0" />
+                    tools:text="10.0"
+                    android:textSize="20sp"
+                    android:paddingStart="60dp"
+                    android:textColor="@color/black"
+                    app:drawableTint="@color/orange_600"
+                    app:drawableStartCompat="@drawable/ic_star_rate" />
 
 
             </LinearLayout>
@@ -65,7 +75,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="@string/description" />
+                android:text="@string/description"
+                android:textColor="@color/black"
+                android:background="@color/rose_50"/>
 
             <TextView
                 android:id="@+id/description_text_view"
@@ -73,7 +85,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="10dp"
-                tools:text="Description" />
+                tools:text="Description"
+                android:textColor="@color/black"
+                android:background="@color/rose_50"/>
 
         </LinearLayout>
     </ScrollView>

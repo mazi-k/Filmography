@@ -37,9 +37,9 @@ class MainActivity : AppCompatActivity() {
     private fun initViewModel(viewModel: MainViewModel) {
         viewModel.film.observe(this) {
             if (isLandscape) {
-                startFragment(R.id.fragment_container_list, FilmFragment())
+                addFragment(R.id.fragment_container_content, FilmFragment())
             } else {
-                startFragment(R.id.fragment_container, FilmFragment())
+                addFragment(R.id.fragment_container, FilmFragment())
             }
         }
     }
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             binding.bottomNavigationMenu?.setOnItemSelectedListener { item: MenuItem ->
                 run {
                     fragmentMap[item.itemId]?.let {
-                        startFragment(R.id.fragment_container_content, it)
+                        addFragment(R.id.fragment_container_content, it)
                     }
                 }
                 true
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             binding.bottomNavigationMenu?.setOnItemSelectedListener { item: MenuItem ->
                 run {
-                    fragmentMap[item.itemId]?.let { startFragment(R.id.fragment_container, it) }
+                    fragmentMap[item.itemId]?.let { addFragment(R.id.fragment_container, it) }
                 }
                 true
             }
@@ -85,5 +85,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun startFragment(container: Int, fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(container, fragment).commit()
+    }
+
+    private fun addFragment(container: Int, fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(container, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 }
