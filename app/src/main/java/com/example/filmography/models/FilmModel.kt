@@ -1,14 +1,29 @@
 package com.example.filmography.models
 
-class FilmModel (title: String, description: String, date: String, rate: Double, image: Any) {
+import com.example.filmography.R
 
-    private var title: String = title
+class FilmModel (
+    _id: Int,
+    _title: String,
+    _description: String,
+    _date: String,
+    _rate: Double) {
 
-    private var description: String = description
+    var id = _id
+    val title = _title
+    val description = _description
+    val date = _date
+    val rate = _rate
+    var image = R.drawable.ic_favorite
 
-    private var date: String = date
+    constructor(id: Int,
+                _title: String,
+                _description: String,
+                _date: String,
+                _rate: Double,
+                _image: Int
+    ) : this(_id = 0, _title, _description, _date, _rate) {
+        image = _image
+    }
 
-    private var rate: Double = rate
-
-    private var image: Any = TODO()
 }
