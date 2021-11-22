@@ -12,3 +12,9 @@ class FilmContract {
         fun makeFavorite(film: FilmModel)
     }
 }
+
+sealed class State
+
+data class ErrorState(val throwable: Throwable): State()
+data class ContentState(val list: List<FilmModel>): State()
+object IdleState: State()
