@@ -6,4 +6,11 @@
     <string name="profile">Профиль</string>
     <string name="watching">Просматриваемые</string>
     <string name="new_films">Новое</string>
+    <string name="recommendations">Рекомендации</string>
+    <string name="description">Описание</string>
+    <string name="say_me_hello">Скажи мне привет</string>
+    <string name="your_name">Ваше имя</string>
+    <string name="say_me_app_name">Скажи мне своё имя</string>
+    <string name="hello">Привет, </string>
+    <string name="anonim">Безымянный</string>
 </resources>

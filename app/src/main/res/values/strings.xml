@@ -5,4 +5,11 @@
     <string name="profile">Profile</string>
     <string name="watching">Watching</string>
     <string name="new_films">New</string>
+    <string name="recommendations">Recommendations</string>
+    <string name="description">Description</string>
+    <string name="say_me_hello">say me hello</string>
+    <string name="your_name">Your name</string>
+    <string name="say_me_app_name">say me app name</string>
+    <string name="hello">Hello, </string>
+    <string name="anonim">Anonim</string>
 </resources>

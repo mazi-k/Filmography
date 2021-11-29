@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:orientation="vertical"
     android:background="#BEE2FF">
 
     <TextView
@@ -11,5 +12,27 @@
         android:text="@string/profile"
         android:gravity="center"
         android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="@string/your_name"
+        />
+
+    <Button
+        android:id="@+id/say_hello_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/say_me_hello" />
+
+    <Button
+        android:id="@+id/say_app_name_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/say_me_app_name" />
 
 </LinearLayout>
