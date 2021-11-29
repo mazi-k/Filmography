@@ -64,17 +64,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        val recyclerNew = binding.newFilmsRecyclerView
+        val recyclerNew = binding!!.newFilmsRecyclerView
         recyclerNew.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerNew.adapter = adapter
 
-        val recyclerWatching = binding.watchingFilmsRecyclerView
+        val recyclerWatching = binding!!.watchingFilmsRecyclerView
         recyclerWatching.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerWatching.adapter = adapter
 
-        val recyclerRecommendations = binding.recommendationFilmsRecyclerView
+        val recyclerRecommendations = binding!!.recommendationFilmsRecyclerView
         recyclerRecommendations.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerRecommendations.adapter = adapter
