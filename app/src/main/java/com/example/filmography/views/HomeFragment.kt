@@ -15,7 +15,7 @@ import java.util.ArrayList
 
 class HomeFragment: Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private var binding: FragmentHomeBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,11 +34,11 @@ class HomeFragment: Fragment() {
     }
 
     private fun initRecyclerView() {
-        val recycler = binding.filmsListRecyclerView
+        val recycler = binding!!.filmsListRecyclerView
         recycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recycler.adapter = FilmAdapter(fillingTitles())
 
-        val recycler2 = binding.filmsListRecyclerView2
+        val recycler2 = binding!!.filmsListRecyclerView2
         recycler2.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recycler2.adapter = FilmAdapter(fillingTitles())
     }
@@ -50,5 +50,10 @@ class HomeFragment: Fragment() {
         list.add("Shreck")
         list.add("Friends")
         return list
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }
