@@ -20,7 +20,7 @@ import com.example.filmography.viewModels.MainViewModel
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private var binding: FragmentHomeBinding? = null
     private lateinit var repository: FilmsRepository
 
     private val viewModel by lazy { ViewModelProviders.of(requireActivity()).get(FilmsListViewModel::class.java)}
@@ -69,7 +69,6 @@ class HomeFragment : Fragment() {
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerNew.adapter = adapter
 
-
         val recyclerWatching = binding.watchingFilmsRecyclerView
         recyclerWatching.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -79,5 +78,10 @@ class HomeFragment : Fragment() {
         recyclerRecommendations.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerRecommendations.adapter = adapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }
