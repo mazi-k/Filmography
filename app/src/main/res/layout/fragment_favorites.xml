@@ -4,13 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/rose_50"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/favorites"
         android:gravity="center"
+        android:padding="16dp"
         android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/get_button"
+        android:text="get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textSize="20sp"
+        android:scrollbars="vertical"/>
+
+    <TextView
+        android:id="@+id/result_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textSize="20sp"
+        android:scrollbars="vertical"/>
+
+
 
 </LinearLayout>

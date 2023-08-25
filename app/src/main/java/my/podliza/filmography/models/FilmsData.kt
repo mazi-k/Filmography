@@ -1,4 +1,4 @@
-package com.example.filmography.models
+package my.podliza.filmography.models
 
 object FilmsData {
     fun getFilms() = listOf(

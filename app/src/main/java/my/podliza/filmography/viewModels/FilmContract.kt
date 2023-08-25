@@ -1,7 +1,7 @@
-package com.example.filmography.viewModels
+package my.podliza.filmography.viewModels
 
 import androidx.lifecycle.LiveData
-import com.example.filmography.models.FilmModel
+import my.podliza.filmography.models.FilmModel
 
 class FilmContract {
     interface ListViewModel{

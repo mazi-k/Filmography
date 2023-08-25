@@ -1,7 +1,7 @@
-package com.example.filmography.impl
+package my.podliza.filmography.impl
 
-import com.example.filmography.models.FilmModel
-import com.example.filmography.models.FilmsRepository
+import my.podliza.filmography.models.FilmModel
+import my.podliza.filmography.models.FilmsRepository
 
 class FilmsRepositoryImpl: FilmsRepository {
 

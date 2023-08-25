@@ -1,4 +1,4 @@
-package com.example.filmography.views
+package my.podliza.filmography.views
 
 import android.content.Context
 import android.os.Bundle
@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.filmography.R
-import com.example.filmography.databinding.FragmentHomeBinding
-import com.example.filmography.impl.FilmsRepositoryImpl
-import com.example.filmography.models.FilmModel
-import com.example.filmography.models.FilmsRepository
-import com.example.filmography.models.OnItemClickListener
-import com.example.filmography.ui.adapters.FilmAdapter
-import com.example.filmography.viewModels.FilmsListViewModel
-import com.example.filmography.viewModels.MainViewModel
+import my.podliza.filmography.R
+import my.podliza.filmography.databinding.FragmentHomeBinding
+import my.podliza.filmography.impl.FilmsRepositoryImpl
+import my.podliza.filmography.models.FilmModel
+import my.podliza.filmography.models.FilmsRepository
+import my.podliza.filmography.models.OnItemClickListener
+import my.podliza.filmography.ui.adapters.FilmAdapter
+import my.podliza.filmography.viewModels.FilmsListViewModel
+import my.podliza.filmography.viewModels.MainViewModel
 
 class HomeFragment : Fragment() {
 
@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
     private val viewModel by lazy { ViewModelProviders.of(requireActivity()).get(FilmsListViewModel::class.java)}
     private val viewModelMain by lazy { ViewModelProviders.of(requireActivity()).get(MainViewModel::class.java)}
 
-    private val listener: OnItemClickListener = object: OnItemClickListener{
+    private val listener: OnItemClickListener = object: OnItemClickListener {
         override fun onItemClick(item: FilmModel?) {
             if (item != null) {
                 viewModelMain.film.postValue(item)

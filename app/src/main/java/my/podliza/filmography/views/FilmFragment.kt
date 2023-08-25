@@ -1,4 +1,4 @@
-package com.example.filmography.views
+package my.podliza.filmography.views
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import com.example.filmography.R
-import com.example.filmography.databinding.FragmentFilmBinding
-import com.example.filmography.viewModels.MainViewModel
+import my.podliza.filmography.R
+import my.podliza.filmography.databinding.FragmentFilmBinding
+import my.podliza.filmography.viewModels.MainViewModel
 
 class FilmFragment : Fragment() {
 

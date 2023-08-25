@@ -1,9 +1,9 @@
-package com.example.filmography.viewModels
+package my.podliza.filmography.viewModels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.filmography.models.FilmModel
-import com.example.filmography.models.FilmsData
+import my.podliza.filmography.models.FilmModel
+import my.podliza.filmography.models.FilmsData
 
 class FilmsListViewModel: ViewModel(), FilmContract.ListViewModel {
 
@@ -12,6 +12,7 @@ class FilmsListViewModel: ViewModel(), FilmContract.ListViewModel {
 
     init {
         filmsList.value = FilmsData.getFilms()
+        //TODO: add correct list
     }
 
     override fun getListFilms(): MutableLiveData<List<FilmModel>> {

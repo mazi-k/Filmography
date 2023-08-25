@@ -1,10 +1,10 @@
-package com.example.filmography.ui.adapters
+package my.podliza.filmography.ui.adapters
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.filmography.models.FilmModel
-import com.example.filmography.models.OnItemClickListener
-import com.example.filmography.ui.holders.FilmViewHolder
+import my.podliza.filmography.models.FilmModel
+import my.podliza.filmography.models.OnItemClickListener
+import my.podliza.filmography.ui.holders.FilmViewHolder
 
 class FilmAdapter(listener: OnItemClickListener): RecyclerView.Adapter<FilmViewHolder>() {
 
@@ -21,11 +21,11 @@ class FilmAdapter(listener: OnItemClickListener): RecyclerView.Adapter<FilmViewH
     }
 
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
-        holder.titleTextView?.text = data.get(position).title
-        holder.rateTextView?.text = data.get(position).rate.toString()
-        holder.dateTextView?.text = data.get(position).date
+        holder.titleTextView?.text = data[position].title
+        holder.rateTextView?.text = data[position].rate.toString()
+        holder.dateTextView?.text = data[position].date
 
-        holder.itemView.setOnClickListener { clickListener.onItemClick(data.get(position)) }
+        holder.itemView.setOnClickListener { clickListener.onItemClick(data[position]) }
     }
 
     override fun getItemCount()= data.size

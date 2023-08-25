@@ -1,6 +1,6 @@
-package com.example.filmography.models
+package my.podliza.filmography.models
 
-import com.example.filmography.R
+import my.podliza.filmography.R
 
 class FilmModel (
     _id: Int,

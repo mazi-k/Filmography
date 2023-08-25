@@ -1,12 +1,12 @@
-package com.example.filmography.views
+package my.podliza.filmography.views
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.filmography.R
-import com.example.filmography.databinding.FragmentProfileBinding
+import my.podliza.filmography.R
+import my.podliza.filmography.databinding.FragmentProfileBinding
 import com.google.android.material.snackbar.Snackbar
 
 class ProfileFragment: Fragment() {

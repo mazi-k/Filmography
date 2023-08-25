@@ -1,4 +1,4 @@
-package com.example.filmography.ui.holders
+package my.podliza.filmography.ui.holders
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.filmography.R
-import com.example.filmography.databinding.ItemFilmBinding
-import com.example.filmography.models.FilmModel
-import com.example.filmography.models.OnItemClickListener
+import my.podliza.filmography.R
+import my.podliza.filmography.databinding.ItemFilmBinding
+import my.podliza.filmography.models.FilmModel
+import my.podliza.filmography.models.OnItemClickListener
 
 class FilmViewHolder(parent: ViewGroup, clickListener: OnItemClickListener) :
     RecyclerView.ViewHolder(
