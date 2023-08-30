@@ -1,5 +1,6 @@
 package my.podliza.filmography.ui.adapters
 
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import my.podliza.filmography.models.FilmModel
@@ -22,8 +23,13 @@ class FilmAdapter(listener: OnItemClickListener): RecyclerView.Adapter<FilmViewH
 
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
         holder.titleTextView?.text = data[position].title
-        holder.rateTextView?.text = data[position].rate.toString()
         holder.dateTextView?.text = data[position].date
+
+        if (data[position].rate == 0.0){
+            holder.rateTextView?.visibility = View.INVISIBLE
+        } else {
+            holder.rateTextView?.text = data[position].rate.toString()
+        }
 
         holder.itemView.setOnClickListener { clickListener.onItemClick(data[position]) }
     }

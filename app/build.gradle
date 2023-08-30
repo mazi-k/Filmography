@@ -33,6 +33,12 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    buildTypes.each {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("apikey.properties").newDataInputStream ())
+        def apiKey = properties.getProperty("x_api_key", "")
+        it.buildConfigField "String", "X_API_KEY", apiKey }
 }
 
 dependencies {
@@ -45,4 +51,13 @@ dependencies {
     testImplementation 'junit:junit:'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'io.coil-kt:coil:2.1.0'
 }

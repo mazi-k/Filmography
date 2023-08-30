@@ -1,4 +1,4 @@
-package my.podliza.filmography.views
+package my.podliza.filmography.views.main
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -7,7 +7,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import my.podliza.filmography.R
 import my.podliza.filmography.databinding.ActivityMainBinding
-import my.podliza.filmography.viewModels.MainViewModel
+import my.podliza.filmography.views.FilmFragment
+import my.podliza.filmography.views.ProfileFragment
+import my.podliza.filmography.views.favorites.FavoritesFragment
+import my.podliza.filmography.views.home.HomeFragment
 import java.util.*
 
 class MainActivity : AppCompatActivity() {

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Filmography">
         <activity
-            android:name="my.podliza.filmography.views.MainActivity"
+            android:name="my.podliza.filmography.views.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

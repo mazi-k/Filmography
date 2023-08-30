@@ -13,8 +13,8 @@ class FilmContract {
     }
 }
 
-sealed class State
-
-data class ErrorState(val throwable: Throwable): State()
-data class ContentState(val list: List<FilmModel>): State()
-object IdleState: State()
+sealed class State {
+    data class ErrorState(val throwable: Throwable): State()
+    data class ContentState(val data: List<FilmModel>): State()
+    data class Loading(val progress: Int?) : State()
+}
